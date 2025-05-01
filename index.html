@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lloyd Griffiths — Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --accent-color: #000000;
+      --card-bg: #f0f0f0;
+      --card-hover: #e0e0e0;
+      --link-color: #333333;
+      --link-hover: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent-color);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+    }
+
+    nav a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: var(--link-hover);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background-color: var(--card-hover);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--link-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--link-color);
+    }
+  </style>
+  <script>
+    const themes = [
+      {
+        '--bg-color': '#ffffff',
+        '--text-color': '#000000',
+        '--accent-color': '#000000',
+        '--card-bg': '#f0f0f0',
+        '--card-hover': '#e0e0e0',
+        '--link-color': '#333333',
+        '--link-hover': '#000000'
+      },
+      {
+        '--bg-color': '#002b5c',
+        '--text-color': '#ffffff',
+        '--accent-color': '#ffef00',
+        '--card-bg': '#033333',
+        '--card-hover': '#044444',
+        '--link-color': '#cccccc',
+        '--link-hover': '#ffffff'
+      },
+      {
+        '--bg-color': '#1a0000',
+        '--text-color': '#ffffff',
+        '--accent-color': '#ff0000',
+        '--card-bg': '#330000',
+        '--card-hover': '#440000',
+        '--link-color': '#bbbbbb',
+        '--link-hover': '#ffffff'
+      }
+    ];
+
+    function applyTheme(theme) {
+      for (let key in theme) {
+        document.documentElement.style.setProperty(key, theme[key]);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const index = Math.floor(Math.random() * themes.length);
+      applyTheme(themes[index]);
+    });
+
+    document.addEventListener('click', () => {
+      const index = Math.floor(Math.random() * themes.length);
+      applyTheme(themes[index]);
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Lloyd Griffiths</h1>
+    <nav>
+      <a href="#articles">Articles</a>
+      <a href="#photos">Photography</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="container" id="articles">
+    <h2 style="margin-bottom:1rem;">Recent Articles</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://placehold.co/600x400?text=Article+1" alt="Article 1">
+        <h3>How Populism Morphs in Power</h3>
+        <p>Exploring the strategic choices populists make once in office: moderation, engineering, or obstruction.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/600x400?text=Article+2" alt="Article 2">
+        <h3>The Digital Echo Chamber</h3>
+        <p>Hyperreality, hyperstition, and why social media feels more real than real life.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" id="photos" style="margin-top:4rem;">
+    <h2 style="margin-bottom:1rem;">Photography</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://placehold.co/600x400?text=Photo+1" alt="Photo 1">
+        <h3>Rural Wales in Lockdown</h3>
+        <p>A photo essay documenting isolation and stillness in mid-Wales during the pandemic.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/600x400?text=Photo+2" alt="Photo 2">
+        <h3>Street Protest in Melbourne</h3>
+        <p>Crowd movements and symbolism during the May Day Rally in 2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" id="about" style="margin-top:4rem;">
+    <h2 style="margin-bottom:1rem;">About Me</h2>
+    <p style="max-width:600px;">
+      I'm a political and cultural journalist from the UK currently based in Melbourne. My work explores populism, protest, and the aesthetics of modern political spaces. I also document social movements through photography. This site serves as an evolving portfolio of my writing and visual work.
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Lloyd Griffiths
+  </footer>
+</body>
+</html>
